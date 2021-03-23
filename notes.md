@@ -5,7 +5,7 @@ Models:
 -  Brewery
 -  Beer 
 -  Comments 
--  Rating 
+-  Rating  ? 
 
 Associations: 
 -  A Beer belongs_to a Brewery
@@ -26,7 +26,7 @@ Associations:
 -  A Brewery belongs_to a User
 -  A User has_many Breweries
 
--  A Beer belongs_to a User, through: a Brewery
+-  A Beer belongs_to a User
 -  A User has_many Beers, through: a Brewery
 
  Brewery
