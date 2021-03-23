@@ -33,13 +33,12 @@ Associations:
  - name
  - location 
  - year established ?
- - number of beers ?
 
 
  User
  - name / username
  - email
- - password
+ - password_digest
 
 
  Comment
