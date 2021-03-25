@@ -22,6 +22,11 @@ class UsersController < ApplicationController
     end
 
     def show
+        @user = User.find_by_id(params[:id])
+        # what is the difference between "find_by_id" & "find"?
+        # "find" will portray an error if a user is not found; "find_by_id" will return NIL"
+        redirect_to '/' if !@user
+        # protection: redirect to home page is user is not found/does not exist
     end
 
     def update
