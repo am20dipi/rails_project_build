@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
 
     has_secure_password #authenticate, auto validates the password
-    validates :email, presence: true
-    validates :name, presence: true 
+    validates :email, presence: { message: "Email must be given" }, uniqueness: true
+    validates :name, presence: { message: "Name must be given" } 
 end
  
