@@ -1,0 +1,14 @@
+<h1>Log in</h1>
+
+<%= form_for(@user) do |f| %>
+    <!-- to use "@user", I defined the instance variable in the UsersController in the new method -->
+
+    <%= f.label :email %>
+    <%= f.email_field :email %><br><br>
+
+    <%= f.label :password %>
+    <%= f.text_field :password %><br><br>
+    <!-- we use :password instead of :password_digest to avoid storing the string -->
+
+    <%= f.submit "Submit" %>
+<% end %>
