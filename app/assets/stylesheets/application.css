@@ -13,9 +13,9 @@
  *= require_tree .
  *= require_self
  */
- html { 
+html { 
     height: 100%;
-    background-color: #EEE; 
+    background-color: rgb(131, 119, 119); 
 }
 
 body {
@@ -29,7 +29,7 @@ body {
     font-family: 'Arial', sans-serif;
     font-size: 1.2em;
     background-color: white;
-    border: double 3px #DDD;
+    border: double 5px rgb(178, 199, 202);
     border-top: none; border-bottom: none;
 }
 
@@ -57,7 +57,7 @@ strong { color: darken(slategrey,20%); }
 
 div.navbar-list a {
     float: left;
-    color: #f2f2f2;
+    color: #b38383;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -76,9 +76,11 @@ div.navbar-list a.active {
 }
 
 .site-footer {
-    background-color: #333;
+    background-color: rgb(163, 216, 216);
     padding: .5em .5em;
-    line-height: 1em;
+    line-height: 0.1em;
     color: #fff;
+    font-size: 12px;
     flex-shrink: 0;
+    text-align: right;
 }
