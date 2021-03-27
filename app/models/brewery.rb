@@ -1,6 +1,5 @@
 class Brewery < ApplicationRecord
-    belongs_to :user
-    has_many :beers
+    has_many :users, through: comments
     has_many :comments
 
     validates :name, presence: true

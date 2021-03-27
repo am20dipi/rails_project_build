@@ -13,3 +13,72 @@
  *= require_tree .
  *= require_self
  */
+ html { 
+    height: 100%;
+    background-color: #EEE; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-height: 100%;
+    margin: 0 auto;
+    padding: .5em 2em;
+    max-width: 800px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em;
+    background-color: white;
+    border: double 3px #DDD;
+    border-top: none; border-bottom: none;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 { margin-top: .5em; text-align: left;}
+
+h3 { font-size: 1.2em; }
+
+h4 { font-size: 1em; }
+
+strong { color: darken(slategrey,20%); }
+ 
+ 
+ 
+ div.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+div.navbar-list a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+div.navbar-list a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+div.navbar-list a.active {
+    background-color: rgb(93, 190, 194);
+    color: white;
+}
+
+.site-footer {
+    background-color: #333;
+    padding: .5em .5em;
+    line-height: 1em;
+    color: #fff;
+    flex-shrink: 0;
+}
