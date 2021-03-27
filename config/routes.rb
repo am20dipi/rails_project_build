@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   # we don't use "get '/logout' " so that the user does not see it in the URL bar
   
   resources :users
-  resources :breweries
-  resources :beers
+  resources :breweries, only: [:index, :new, :create]
   resources :comments
+
 end
