@@ -1,0 +1,8 @@
+<h1><%= @brewery.name %></h1>
+
+<h4> Year Established: <%= @brewery.year_established %></h4>
+<h3> Location: <%= @brewery.location %></h3>
+
+<%= link_to "Go Back", :back %>
+<%= link_to "Edit", edit_brewery_path(@brewery) %>
+<%= link_to "Delete", @brewery, method: "delete" %>
