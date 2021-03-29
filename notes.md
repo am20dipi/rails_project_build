@@ -46,3 +46,9 @@ Associations:
 
  Rating
  - content / number?
+
+
+
+
+ <!-- f.label :beer_id -->
+    <!-- <%= f.collection_select :beer_id, Beer.all, :id, :name, prompt: true %> -->

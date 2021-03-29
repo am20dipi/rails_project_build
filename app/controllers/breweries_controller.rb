@@ -14,16 +14,16 @@ class BreweriesController < ApplicationController
         redirect_to '/' if !@brewery
     end
 
-    def edit
-    end
-
     def create 
-        @brewery = Brewery.create(brewery_params)
+        @brewery = Brewery.new(brewery_params)
         if @brewery.save
             redirect_to @brewery
         else
             render :new
         end
+    end
+
+    def edit
     end
 
     private
