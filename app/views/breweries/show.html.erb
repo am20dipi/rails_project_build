@@ -4,7 +4,9 @@
 <h4> Year Established: <%= @brewery.year_established %></h4>
 
 <br>
+    <%= link_to "Add a Comment", new_comment_path %>
 
-<%= link_to "Go Back", :back %>
+<hr>
+<%= link_to "Go Back", :back %> 
 <%= link_to "Edit", edit_brewery_path(@brewery) %>
 <%= link_to "Delete", brewery_path(@brewery), :confirm => "Are you sure?", method: "delete" %>

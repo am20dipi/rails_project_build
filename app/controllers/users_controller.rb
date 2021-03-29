@@ -33,6 +33,15 @@ class UsersController < ApplicationController
     def update
     end
 
+    def edit 
+
+    end
+
+    def destroy
+        session.clear
+        redirect_to '/'
+    end
+
 
     private
         def user_params
