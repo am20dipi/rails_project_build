@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
         user = User.find_by(email: params[:user][:email])
         if user && user.authenticate(params[:user][:password])
         # if a user exists AND the user is authenticated via password
-            session[:user_id] == user.id
+            session[:user_id] = user.id
 
             redirect_to user_path(user)
             # user_path(user) is the same as "/users/:id"

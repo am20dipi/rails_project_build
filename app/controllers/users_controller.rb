@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save
             # log them in, since they are now signed up
-            session[:user_id] == @user.id
+            session[:user_id] = @user.id
 
             #redirect to the show page, "@user" is an abstraction of the user_path
             redirect_to @user 
