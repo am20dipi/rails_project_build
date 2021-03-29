@@ -15,7 +15,7 @@
  */
 html { 
     height: 100%;
-    background-color: rgb(131, 119, 119); 
+    background-color: rgb(212, 195, 195); 
 }
 
 body {
@@ -28,8 +28,8 @@ body {
     max-width: 800px;
     font-family: 'Arial', sans-serif;
     font-size: 1.2em;
-    background-color: white;
-    border: double 5px rgb(178, 199, 202);
+    background-color: rgb(180, 156, 156);
+    border: double 5px rgb(0, 0, 0);
     border-top: none; border-bottom: none;
 }
 
@@ -71,15 +71,15 @@ div.navbar-list a:hover {
 
 /* Add a color to the active/current link */
 div.navbar-list a.active {
-    background-color: rgb(93, 190, 194);
+    background-color: rgb(245, 248, 248);
     color: white;
 }
 
 .site-footer {
-    background-color: rgb(163, 216, 216);
+    background-color: rgb(232, 238, 238);
     padding: .5em .5em;
     line-height: 0.1em;
-    color: #fff;
+    color: rgb(7, 7, 7);
     font-size: 12px;
     flex-shrink: 0;
     text-align: right;
