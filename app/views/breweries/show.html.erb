@@ -7,4 +7,4 @@
 
 <%= link_to "Go Back", :back %>
 <%= link_to "Edit", edit_brewery_path(@brewery) %>
-<%= link_to "Delete", @brewery, method: "delete" %>
+<%= link_to "Delete", brewery_path(@brewery), :confirm => "Are you sure?", method: "delete" %>

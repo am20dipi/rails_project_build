@@ -15,7 +15,7 @@ class BreweriesController < ApplicationController
     end
 
     def create 
-        @brewery = Brewery.new(brewery_params)
+        @brewery = current_user.breweries.build(brewery_params)
         if @brewery.save
             redirect_to @brewery
         else
@@ -24,6 +24,11 @@ class BreweriesController < ApplicationController
     end
 
     def edit
+    end
+
+    def destroy
+        @brewery.destroy
+        redirect_to '/breweries', :notice => "Successfully deleted."
     end
 
     private
