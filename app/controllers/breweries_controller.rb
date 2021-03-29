@@ -1,4 +1,5 @@
 class BreweriesController < ApplicationController
+    before_action :redirect_if_not_logged_in
     before_action :find_brewery, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -18,8 +19,7 @@ class BreweriesController < ApplicationController
 
     def create 
         @brewery = Brewery.create(brewery_params)
-        if @brewery.valid
-            @brewery.save
+        if @brewery.save
             redirect_to @brewery
         else
             render :new
