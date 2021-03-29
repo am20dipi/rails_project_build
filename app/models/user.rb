@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-    has_many :breweries, through: :comments
+    has_many :breweries
     has_many :comments
 
 
@@ -8,3 +8,9 @@ class User < ApplicationRecord
     validates :name, presence: { message: "Name must be given" } 
 end
  
+
+# NESTED ROUTES
+
+# one that ends in /new
+# one that ends in /index
+

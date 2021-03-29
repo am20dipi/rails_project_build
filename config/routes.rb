@@ -18,8 +18,21 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   # we don't use "get '/logout' " so that the user does not see it in the URL bar
   
-  resources :users
-  resources :breweries
   resources :comments
+
+
+  # NESTED ROUTES 
+  resources :users do 
+    resources :breweries, only: [:new, :create, :index]
+  end
+  
+  # "shallow routing" is only: [:etc, :etc]. We only want something to be nested if it needs to be nested
+  
+  resources :breweries do 
+    resources :comments, only: [:new, :create, :index ]
+  end
+
+
+  
 
 end
