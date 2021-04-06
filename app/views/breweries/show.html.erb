@@ -5,6 +5,17 @@
 <br>
 
 <hr><br>
-<%= link_to "Go Back", :back %> 
-<%= link_to "Edit", edit_brewery_path(@brewery) %>
+
+<%= link_to "Edit", edit_brewery_path(@brewery) %> 
 <%= link_to "Delete", brewery_path(@brewery), :confirm => "Are you sure?", method: "delete" %>
+
+<br>
+<br>
+<hr>
+    <h4>Comments:</h4>
+    <% @brewery.comments.each do |comment| %>
+        <li><%= comment.content %></li>
+    <% end %>
+<br>
+    <%= link_to "Add a Comment", new_brewery_comment_path(@brewery.id) %>
+    <%= link_to "See All Comments", brewery_comments_path(@brewery) %>

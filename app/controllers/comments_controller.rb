@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
     before_action :find_comment, only: [:show, :edit, :update, :destroy]
     
     def index 
-        if params[:brewery_id] && @brewery = Brewery.find_by_id(params[:post_id])
+        if params[:brewery_id] && @brewery = Brewery.find_by_id(params[:brewery_id])
             @comments = @brewery.comments
         else
             @comments = Comment.all
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
     def update
         @comment.update
         if @comment.save 
-            redirect_to @comment
+            redirect_to brewery_path(@brewery.id)
         else
             render :edit 
         end
@@ -50,6 +50,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-        params.require(:comment).permit(:content, :user_id, :brewery_id)
+        params.require(:comment).permit(:content, :brewery_id)
     end
 end
