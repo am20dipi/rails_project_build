@@ -55,3 +55,13 @@ Associations:
 <br>
     <%= link_to "Add a Comment", new_comment_path %>
     <%= link_to "See All Comments", brewery_comments_path(@brewery) %>
+
+
+
+
+
+     <div class="nav-bar">
+    <a class="navbar-link <%= active_css(root_path)%>" href="/">Home</a>
+    <a class="navbar-link <%= active_css(breweries_path)%>" href="/breweries">Breweries</a>
+    <a class="navbar-link <%= active_css(new_brewery_path)%>" href="/breweries/new">New Brewery</a>
+  </div>

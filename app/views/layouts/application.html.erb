@@ -12,11 +12,12 @@
   </head>
 
 
+
   <body>
         <nav>
           <% if logged_in? %>
             <%= link_to "Logout", logout_path, method: "delete" %> |
-            <%= link_to 'Add a Brewery', new_brewery_path %> |
+            <%= link_to 'New Brewery', new_brewery_path %> |
             <%= link_to 'All Breweries', breweries_path %>
           <% else %>
             <%= link_to "Sign Up", signup_path %> |

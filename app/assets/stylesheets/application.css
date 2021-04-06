@@ -15,7 +15,7 @@
  */
 html { 
     height: 100%;
-    background-color: rgb(212, 195, 195); 
+    background-color: rgb(238, 226, 226); 
 }
 
 body {
@@ -28,7 +28,7 @@ body {
     max-width: 800px;
     font-family: 'Arial', sans-serif;
     font-size: 1.2em;
-    background-color: rgb(180, 156, 156);
+    background-color: rgb(221, 205, 205);
     border: double 5px rgb(0, 0, 0);
     border-top: none; border-bottom: none;
 }
@@ -71,7 +71,7 @@ div.navbar-list a:hover {
 
 /* Add a color to the active/current link */
 div.navbar-list a.active {
-    background-color: rgb(245, 248, 248);
+    background-color: rgb(117, 173, 95);
     color: white;
 }
 

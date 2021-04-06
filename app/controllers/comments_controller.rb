@@ -14,6 +14,9 @@ class CommentsController < ApplicationController
         @comment = Comment.new
     end
 
+    def show
+    end
+
     def create
         @comment = current_user.comments.build(comment_params)
         if @comment.valid?
@@ -23,8 +26,7 @@ class CommentsController < ApplicationController
         end
     end
 
-    def show
-    end
+    
 
     def edit
     end
