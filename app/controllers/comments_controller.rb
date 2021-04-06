@@ -15,8 +15,8 @@ class CommentsController < ApplicationController
     end
 
     def create
-        @comment = Comment.create(comment_params)
-        if @comment.save
+        @comment = current_user.comments.build(comment_params)
+        if @comment.valid?
             redirect_to @comment
         else
             render :new
@@ -50,6 +50,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-        params.require(:comment).permit(:content, :brewery_id, :user_id)
+        params.require(:comment).permit(:content)
     end
 end

@@ -1,5 +1,5 @@
 <h1>Edit <%= @brewery.name %></h1>
-<%= render partial: "errors" %>
+<%= render partial: "errors", locals: {object: @brewery} %>
 <br>
 <div>
     <%= form_with(model: @brewery) do |f| %>

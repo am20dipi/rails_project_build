@@ -1,4 +1,5 @@
 <h1>Edit your Comment</h1>
 
-<%= render partial: "form", locals: { comment: @comment} %>
-
+<%= form_for @comment do |f| %>
+    <%= render partial: "form", locals: {form_builder: f} %>
+<% end %>
