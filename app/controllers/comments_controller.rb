@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     def create
         @comment = current_user.comments.build(comment_params)
         if @comment.save
-            redirect_to comments_path
+            redirect_to @comment
         else
             render :new
         end
@@ -26,7 +26,16 @@ class CommentsController < ApplicationController
     def show
     end
 
+    def edit
+    end
+
     def update
+        @comment.update
+        if @comment.save 
+            redirect_to @comment
+        else
+            render :edit 
+        end
     end
 
     def destroy
