@@ -12,10 +12,17 @@
 <br>
 <br>
 <hr>
+    <h4><%= @brewery.name %>'s Beers</h4>
+        <% @brewery.beers.each do |beer| %>
+            <li><%= beer.name %></li>
+        <% end %>
+        <br>
+         <%= link_to "Add a Beer", new_brewery_beer_path(@brewery.id) %>
+<br>
+<hr>
     <h4>Comments:</h4>
     <% @brewery.comments.each do |comment| %>
         <li><%= comment.content %></li>
     <% end %>
 <br>
     <%= link_to "Add a Comment", new_brewery_comment_path(@brewery.id) %>
-    <%= link_to "See All Comments", brewery_comments_path(@brewery) %>

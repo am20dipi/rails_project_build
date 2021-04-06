@@ -47,7 +47,9 @@ Rails.application.routes.draw do
   # /breweries/:brewery_id/comments/edit                                                       comments#create
   # /breweries/:brewery_id/comments/new                                                     comments#new
 
-
+  resources :breweries do 
+    resources :beers, only: [:new, :create, :show ]
+  end
   
 
 end
