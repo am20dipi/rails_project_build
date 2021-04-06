@@ -52,3 +52,13 @@ Associations:
 
  <!-- f.label :beer_id -->
     <!-- <%= f.collection_select :beer_id, Beer.all, :id, :name, prompt: true %> -->
+
+
+
+    <h4>Comments:</h4>
+    <% @breweries.comments.each do |c| %>
+        <li><%= link_to c.content, comment_path(c) %></li>
+    <% end %>
+<br>
+    <%= link_to "Add a Comment", new_comment_path %>
+    <%= link_to "See All Comments", brewery_comments_path(@brewery) %>

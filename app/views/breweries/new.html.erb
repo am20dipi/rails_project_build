@@ -1,22 +1,4 @@
 <h1>Add a Brewery</h1>
 
-<%= form_with model: @brewery do |f|%>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br><br>
+<%= render "form" %>
 
-    <%= f.label :location %>
-    <%= f.text_field :location %><br><br>
-
-    <%= f.label :year_established %>
-    <%= f.number_field :year_established %><br><br>
-
-    
-
-
-    
-    
-    <%= f.submit %>
-<% end %>
-<br><br>
-
-<%= link_to "Go Back", :back %>

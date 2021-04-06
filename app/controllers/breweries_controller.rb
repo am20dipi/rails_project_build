@@ -11,7 +11,7 @@ class BreweriesController < ApplicationController
     end
 
     def show
-        redirect_to '/' if !@brewery
+        redirect_to '/breweries' if !@brewery
     end
 
     def create 
@@ -24,6 +24,15 @@ class BreweriesController < ApplicationController
     end
 
     def edit
+    end
+
+    def update
+        @brewery.update(brewery_params) 
+        if @brewery.save
+            redirect_to @brewery
+        else
+            render :edit
+        end
     end
 
     def destroy
