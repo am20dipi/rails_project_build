@@ -5,5 +5,5 @@ class Brewery < ApplicationRecord
 
     validates :name, presence: true
     validates :location, presence: true 
-    validates :year_established, presence: true, numericality: { message: "%{value} seems wrong" } 
+    validates :year_established, presence: true, numericality: { message: "%{value} seems wrong" }, length: { is: 4 }
 end
