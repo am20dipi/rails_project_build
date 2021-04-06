@@ -1,6 +1,7 @@
 class BreweriesController < ApplicationController
     before_action :redirect_if_not_logged_in
     before_action :find_brewery, only: [:show, :edit, :update, :destroy]
+    #accepts_nested_attributes_for :comments
 
     def index
         @breweries = Brewery.all

@@ -1,0 +1,3 @@
+<% if @brewery.errors.any? %>
+    <h2><%= pluralize(@brewery.errors.count, "Error")%></h2>
+<% end %>

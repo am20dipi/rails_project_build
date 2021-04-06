@@ -1,21 +1,12 @@
-<%= form_with model: @brewery do |f|%>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br><br>
 
-    <%= f.label :location %>
-    <%= f.text_field :location %><br><br>
+    <%= form_builder.label :name %>
+    <%= form_builder.text_field :name %><br><br>
 
-    <%= f.label :year_established %>
-    <%= f.number_field :year_established %><br><br>
+    <%= form_builder.label :location %>
+    <%= form_builder.text_field :location %><br><br>
 
-    
-
+    <%= form_builder.label :year_established %>
+    <%= form_builder.number_field :year_established %><br><br>
 
     
-    
-    <%= f.submit %>
-<% end %>
 
-<br><br>
-
-<%= link_to "Go Back", :back %>

@@ -1,7 +1,7 @@
 class Comment < ApplicationRecord
     belongs_to :user 
     belongs_to :brewery
-    validates :content, presence: true, length: { in: 5..500 }
+    validates :content, presence: true, length: { in: 2..500 }
     # this acts as the JOIN table; any table that contains 2 foreign keys
     
     #accepts_nested_attributes_for :brewery
