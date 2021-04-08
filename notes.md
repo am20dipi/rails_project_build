@@ -19,7 +19,7 @@ Associations:
 -  A User has_many Comments, through: a Brewery
 
 
--  A Brewery belongs_to a User
+-  A Brewery has_many Users
 -  A User has_many Breweries
 
 -  A Beer belongs_to a User
