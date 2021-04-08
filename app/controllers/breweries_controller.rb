@@ -1,7 +1,7 @@
 class BreweriesController < ApplicationController
     before_action :redirect_if_not_logged_in
     before_action :find_brewery, only: [:show, :edit, :update, :destroy]
-    #accepts_nested_attributes_for :comments
+    accepts_nested_attributes_for :comments
 
     def index
         @breweries = Brewery.all
@@ -9,6 +9,7 @@ class BreweriesController < ApplicationController
 
     def new 
        @brewery = Brewery.new 
+       @brewery.comments.build
     end
 
     def show
@@ -16,7 +17,7 @@ class BreweriesController < ApplicationController
     end
 
     def create 
-        @brewery = current_user.breweries.build(brewery_params)
+        @brewery = current_user.breweries.build(brewery_params(:name, :location, :year_established, comments_attributes:[:content]))
         if @brewery.save
             redirect_to @brewery
         else
@@ -46,7 +47,7 @@ class BreweriesController < ApplicationController
         @brewery = Brewery.find_by(id: params[:id])
     end
 
-    def brewery_params
-        params.require(:brewery).permit(:name, :location, :year_established)
+    def brewery_params(*args)
+        params.require(:brewery).permit(*args)
     end
 end

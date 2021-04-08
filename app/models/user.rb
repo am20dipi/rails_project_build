@@ -2,7 +2,6 @@ class User < ApplicationRecord
     has_many :breweries
     has_many :comments
 
-    has_many :commented_breweries, through: :comments, source: :brewery
 
 
     has_secure_password #authenticate, auto validates the password

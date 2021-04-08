@@ -20,36 +20,15 @@ Rails.application.routes.draw do
   
 
   resources :comments
+  resources :breweries
+  resources :users
+  resources :beers
 
-  post '/comments' => 'comments#create'
-
-
-
-  # NESTED ROUTES 
-  resources :users do 
-    resources :breweries, only: [:new, :create, :index]
-  end
   
-  # "shallow routing" is only: [:etc, :etc]. We only want something to be nested if it needs to be nested
+
+
+
   
-  # /users/:user_id/breweries                                                               breweries#index
-  # /users/:user_id/breweries                                                              breweries#create
-  # /users/:user_id/breweries/new                                                           breweries#new
-
-
-
-
-  resources :breweries do 
-    resources :comments, only: [:new, :create, :index, :show ]
-  end
-
-  # /breweries/:brewery_id/comments                                                       comments#index
-  # /breweries/:brewery_id/comments/edit                                                       comments#create
-  # /breweries/:brewery_id/comments/new                                                     comments#new
-
-  resources :breweries do 
-    resources :beers, only: [:new, :create, :show ]
-  end
   
 
 end

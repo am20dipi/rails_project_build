@@ -2,7 +2,7 @@
 
 <% @breweries.each do |brewery| %>
     <ul>
-        <li><%= link_to brewery.name, "/breweries/#{brewery.id}" %></li>
+        <li><%= link_to brewery.name, brewery_path(@brewery) %></li>
     </ul>
 <% end %>
 

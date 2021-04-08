@@ -20,9 +20,6 @@
          <%= link_to "Add a Beer", new_brewery_beer_path(@brewery.id) %>
 <br>
 <hr>
-    <h4>Comments:</h4>
-    <% @brewery.comments.each do |comment| %>
-        <li><%= comment.content %></li>
-    <% end %>
+    
 <br>
     <%= link_to "Add a Comment", new_brewery_comment_path(@brewery.id) %>
