@@ -1,5 +1,6 @@
 class BeersController < ApplicationController
     before_action :find_beer, only: [:show, :edit, :update, :destroy]
+  
 
     def new 
        @beer = Beer.new 

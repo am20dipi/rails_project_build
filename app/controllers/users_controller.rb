@@ -1,8 +1,5 @@
 class UsersController < ApplicationController
 
-    def index
-    end
-
     def new
         @user = User.new
     end
@@ -30,17 +27,6 @@ class UsersController < ApplicationController
         # protection: redirect to home page is user is not found/does not exist
     end
 
-    def update
-    end
-
-    def edit 
-
-    end
-
-    def destroy
-        session.clear
-        redirect_to '/'
-    end
 
 
     private

@@ -2,20 +2,20 @@ class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
     # gives us access to these methods in the views
     
-    private 
-        def current_user
-            @current_user ||= User.find_by_id(session[:user_id])
-            # if @current_user is already defined, it will equal @current_user.
-            # otherwise it will find a @current_user by searching through the sessions hash
-            # MEMOIZATION
-        end
+     
+    def current_user
+        @user ||= User.find_by(id: session[:user_id]) if logged_in?
+        # if @current_user is already defined, it will equal @current_user.
+        # otherwise it will find a @current_user by searching through the sessions hash
+        # MEMOIZATION
+    end
 
 
-        def logged_in?
-            !!session[:user_id]
-        end
+    def logged_in?
+        !!session[:user_id]
+    end
 
-        def redirect_if_not_logged_in
-            redirect_to '/' if !logged_in?
-        end
+    def redirect_if_not_logged_in
+        redirect_to '/login' if !logged_in?
+    end
 end

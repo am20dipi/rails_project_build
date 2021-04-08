@@ -2,13 +2,6 @@ class CommentsController < ApplicationController
     before_action :redirect_if_not_logged_in
     before_action :find_comment, only: [:show, :edit, :update, :destroy]
     
-    def index 
-        if params[:brewery_id] && @brewery = Brewery.find_by_id(params[:brewery_id])
-            @comments = @brewery.comments
-        else
-            @comments = Comment.all
-        end
-    end
 
     def new
         @comment = Comment.new
@@ -18,9 +11,9 @@ class CommentsController < ApplicationController
     end
 
     def create
-        @comment = current_user.comments.build(comment_params)
+        @comment = Comment.create(comment_params)
         if @comment.valid?
-            redirect_to @comment
+            redirect_to brewery_path(@brewery.id)
         else
             render :new
         end

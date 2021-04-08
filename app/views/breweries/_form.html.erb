@@ -2,16 +2,16 @@
 
 <div>
     <%= form_with(model: @brewery) do |f| %>
-        <%= form_builder.label :name %>
-        <%= form_builder.text_field :name %><br><br>
+        <%= f.label :name %>
+        <%= f.text_field :name %><br><br>
 
-        <%= form_builder.label :location %>
-        <%= form_builder.text_field :location %><br><br>
+        <%= f.label :location %>
+        <%= f.text_field :location %><br><br>
 
-        <%= form_builder.label :year_established %>
-        <%= form_builder.number_field :year_established %><br><br>
+        <%= f.label :year_established %>
+        <%= f.number_field :year_established %><br><br>
+        <hr>Add a Comment<br>
         <%= f.fields_for :comments, @brewery.comments.build do |comments_field| %>
-            <%= comments_field.label :content %>
             <%= comments_field.text_area :content %><br><br>
         <% end %> 
         <%= f.submit %>

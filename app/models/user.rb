@@ -1,21 +1,12 @@
 class User < ApplicationRecord
-    has_many :breweries
-    has_many :comments
-
-
+    has_many :breweries 
+    #has_many :comments, through: :breweries 
 
     has_secure_password #authenticate, auto validates the password
     validates :email, presence: { message: "Email must be given" }, uniqueness: true
     validates :name, presence: { message: "Name must be given" }, length: {in: 2..40 } 
 
-    def current_user
-        session[:user_id] = user.id
-    end
 end
  
 
-# NESTED ROUTES
-
-# one that ends in /new
-# one that ends in /index
 

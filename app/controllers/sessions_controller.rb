@@ -1,14 +1,11 @@
 class SessionsController < ApplicationController
+    before_action :redirect_if_not_logged_in, only: [:new]
+
     def home 
     end
 
-    def destroy
-        session.clear
-        redirect_to root_path
-    end
-
     def new 
-       # @user = User.new
+       @user = User.new
     end 
 
     def create
@@ -23,5 +20,10 @@ class SessionsController < ApplicationController
             flash[:message] = "Sorry, please try again."
             redirect_to '/login'
         end
+    end
+
+    def destroy
+        session.clear
+        redirect_to root_path
     end
 end
