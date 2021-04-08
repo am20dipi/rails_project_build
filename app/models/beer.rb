@@ -4,5 +4,5 @@ class Beer < ApplicationRecord
     validates :abv, presence: true, numericality: true
     validates :description, presence: true
 
-    belongs_to :brewery 
+    has_many :breweries, through: :beer_stock 
 end

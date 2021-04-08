@@ -5,10 +5,11 @@ Models:
 -  Brewery
 -  Beer 
 -  Comments 
+- Beer Stock
 
 Associations: 
--  A Beer belongs_to a Brewery
--  A Brewery has_many Beers
+-  A Beer has_many Breweries, through: :beer_stock
+-  A Brewery has_many Beers, through: :beer_stock
 
 -  A Brewery has_many Comments
 -  A Comment belongs_to a Brewery
@@ -24,10 +25,20 @@ Associations:
 -  A Beer belongs_to a User
 -  A User has_many Beers, through: a Brewery
 
+
+-  Beer stock belongs_to Brewery
+-  Beer stock belongs_to Beer
+
  Brewery
  - name
  - location 
- - year established ?
+ - year established
+ - user_id 
+
+ Beer Stock
+ - quantity
+ - brewery_id
+ - beer_id
 
 
  User
@@ -38,29 +49,28 @@ Associations:
 
  Comment
  - content
+ - brewery_id 
+ - user _id
+
+ Beer 
+ - name
+ - type
+ - abv
+ - description 
 
 
 
 
 
- <!-- f.label :beer_id -->
-    <!-- <%= f.collection_select :beer_id, Beer.all, :id, :name, prompt: true %> -->
 
 
 
-    <h4>Comments:</h4>
-    <% @breweries.comments.each do |c| %>
-        <li><%= link_to c.content, comment_path(c) %></li>
-    <% end %>
-<br>
-    <%= link_to "Add a Comment", new_comment_path %>
-    <%= link_to "See All Comments", brewery_comments_path(@brewery) %>
+    
 
 
 
 
-
-     <div class="nav-bar">
+  <div class="nav-bar">
     <a class="navbar-link <%= active_css(root_path)%>" href="/">Home</a>
     <a class="navbar-link <%= active_css(breweries_path)%>" href="/breweries">Breweries</a>
     <a class="navbar-link <%= active_css(new_brewery_path)%>" href="/breweries/new">New Brewery</a>
@@ -82,14 +92,3 @@ Associations:
 
 
 
-  resources :breweries do 
-    resources :comments, only: [:new, :create, :index, :show ]
-  end
-
-  # /breweries/:brewery_id/comments                                                       comments#index
-  # /breweries/:brewery_id/comments/edit                                                       comments#create
-  # /breweries/:brewery_id/comments/new                                                     comments#new
-
-  resources :breweries do 
-    resources :beers, only: [:new, :create, :show ]
-  end
