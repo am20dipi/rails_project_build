@@ -15,7 +15,7 @@
  */
 html { 
     height: 100%;
-    background-color: rgb(238, 226, 226); 
+    width: 100% 
 }
 
 body {
@@ -26,9 +26,9 @@ body {
     margin: 0 auto;
     padding: .5em 2em;
     max-width: 800px;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Courier New', sans-serif;
     font-size: 1.2em;
-    background-color: rgb(221, 205, 205);
+    background-color: rgb(255, 255, 255);
     border: double 5px rgb(0, 0, 0);
     border-top: none; border-bottom: none;
 }
