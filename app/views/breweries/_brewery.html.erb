@@ -1,0 +1,10 @@
+<h1><%= @brewery.name %></h1>
+<br>
+    <h3> Location: <%= @brewery.location %></h3>
+    <h4> Year Established: <%= @brewery.year_established %></h4>
+<br>
+
+<hr><br>
+
+<%= link_to "Edit", edit_brewery_path(@brewery) %> 
+<%= link_to "Delete", brewery_path(@brewery), :confirm => "Are you sure?", method: "delete" %>
